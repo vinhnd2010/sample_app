@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'users/new'
+  # get 'users/index'
+  get 'users' => 'users#index'
 
 
   resources :users

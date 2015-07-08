@@ -1,0 +1,19 @@
+<% provide(:title, "All users") %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<% @users.each do |user| %>
+	<%= render user %>  <!-- Rails will calls _user.html.erb -->
+	 <!-- <li>
+	 	<%= gravatar_for(user) %>
+	 	<%= link_to user.name, user %>
+	 </li> -->
+	<% end %>
+
+	<!-- Other way without loop by: -->
+	<!--<%= render @users %> -->
+</ul>
+
+<%= will_paginate %>
