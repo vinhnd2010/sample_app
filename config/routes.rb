@@ -20,13 +20,12 @@ Rails.application.routes.draw do
   get 'users/new'
   # get 'users/index'
   get 'users' => 'users#index'
-  resources :user do 
+  resources :users do 
     member do
-      get :following, :follower
+      get :following, :followers
     end
   end
 
-  resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
